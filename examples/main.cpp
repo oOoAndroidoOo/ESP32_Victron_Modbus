@@ -24,9 +24,9 @@ void loop() {
   if (WiFi.status() == WL_CONNECTED) {
    
   //  modbus.readAllRegisters(); // bei Bedarf aktivieren
-  // modbus.readAllRegisters();
+   modbus.readAllRegisters();
    
-  // Serial.println(modbus.getValue(REG_BAT_PWR));
+   Serial.println(modbus.getValue(REG_BAT_PWR));
   // int socValue = modbus.readRegisterByName(REG_SOC);
   Serial.printf("🔋 BatterieLeistung      : %.2f W\n", modbus.readRegister(REG_BAT_PWR));
   Serial.printf("🔋 Batteriespannung      : %.2f V\n", modbus.readRegister(REG_Battery_Voltage));
