@@ -2,7 +2,7 @@
 #include <ModbusIP_ESP8266.h>
 #include <WiFi.h>
 
-const int ModbusTimeout = 1000; // Timeout in Millisekunden
+const int ModbusTimeout = 1000; //  Timeout in Millisekunden
 
 // Typdefinition für eine Umrechnungsfunktion:
 
