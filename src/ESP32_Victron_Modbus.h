@@ -2,44 +2,6 @@
 #include <ModbusIP_ESP8266.h>
 #include <WiFi.h>
 
-const int ModbusTimeout = 1000; //  Timeout in Millisekunden
-
-//  Typdefinition für eine Umrechnungsfunktion:
-
-typedef float (*ConversionFunc)(uint16_t);
-
-static inline float convertNone(uint16_t raw)
-{
-  return static_cast<float>(raw);
-}
-
-static inline float convertDiv10(uint16_t raw)
-{
-  return raw / 10.0f;
-}
-
-static inline float convertDiv100(uint16_t raw)
-{
-  return raw / 100.0f;
-}
-
-static inline float convertMul10(uint16_t raw)
-{
-  return raw * 10.0f;
-}
-
-static inline float convertInt16(uint16_t raw)
-{
-  return static_cast<float>(static_cast<int16_t>(raw));
-}
-
-static inline float convertInt16Div10(uint16_t raw)
-{
-  return static_cast<float>(static_cast<int16_t>(raw)) / 10.0f;
-}
-// Hier definieren wir die Registerliste als Makro.
-// Für jeden Eintrag können wir nun auch angeben, ob eine der Standardfunktionen oder convertInt16 verwendet werden soll.
-
 #define REGISTER_LIST                                    \
   X(REG_PV1, 811, 100, convertNone, 0)                   \
   X(REG_PV2, 808, 100, convertNone, 0)                   \
@@ -54,6 +16,10 @@ static inline float convertInt16Div10(uint16_t raw)
   X(REG_Battery_Voltage, 259, 225, convertDiv100, 2)     \
   X(REG_Battery_Current, 261, 225, convertInt16Div10, 2) \
   X(REG_Battery_Temp, 262, 225, convertDiv10, 2)
+
+
+
+  const int ModbusTimeout = 1000; //  Timeout in Millisekunden
 
 // Enum mit allen Registernamen
 enum RegisterIndex
@@ -94,6 +60,39 @@ private:
   bool isConnected;
   static const RegisterEntry registers[];
 
-  // Hilfsfunktion, die sicherstellt, dass eine Verbindung besteht.
-  bool ensureConnected();
+  bool ensureConnected(); // Hilfsfunktion, die sicherstellt, dass eine Verbindung besteht.
 };
+
+//  Typdefinition für Umrechnungsfunktion:
+
+typedef float (*ConversionFunc)(uint16_t);
+
+static inline float convertNone(uint16_t raw)
+{
+  return static_cast<float>(raw);
+}
+
+static inline float convertDiv10(uint16_t raw)
+{
+  return raw / 10.0f;
+}
+
+static inline float convertDiv100(uint16_t raw)
+{
+  return raw / 100.0f;
+}
+
+static inline float convertMul10(uint16_t raw)
+{
+  return raw * 10.0f;
+}
+
+static inline float convertInt16(uint16_t raw)
+{
+  return static_cast<float>(static_cast<int16_t>(raw));
+}
+
+static inline float convertInt16Div10(uint16_t raw)
+{
+  return static_cast<float>(static_cast<int16_t>(raw)) / 10.0f;
+}
