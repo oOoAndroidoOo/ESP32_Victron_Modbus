@@ -4,7 +4,7 @@
 
 const int ModbusTimeout = 1000; //  Timeout in Millisekunden
 
-// Typdefinition für eine Umrechnungsfunktion:
+//  Typdefinition für eine Umrechnungsfunktion:
 
 typedef float (*ConversionFunc)(uint16_t);
 
