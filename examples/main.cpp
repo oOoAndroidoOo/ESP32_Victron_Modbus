@@ -37,7 +37,6 @@ void loop() {
  // Serial.printf("🔋 Batter Strom     : %d\n",modbus.readRegister(REG_Battery_Current));
  // Serial.printf("🔋 Batter Temperatur: %d°C\n",modbus.readRegister(REG_Battery_Temp)/10);
   
-   
     delay(10000);
   }
 }
