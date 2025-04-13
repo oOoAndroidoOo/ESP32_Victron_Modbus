@@ -1,0 +1,7 @@
+ESP32_Victron_Modbus	KEYWORD1
+begin	KEYWORD2
+readAllRegisters	KEYWORD2
+getValue	KEYWORD2
+readRegister	KEYWORD2
+writeRegister	KEYWORD2
+readRegisterByName	KEYWORD2
