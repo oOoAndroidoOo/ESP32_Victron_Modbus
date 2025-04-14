@@ -20,7 +20,8 @@
   X(REG_Battery_Current, 261, 225, convertInt16Div10, 2) \
   X(REG_Battery_Temp, 262, 225, convertDiv10, 2) \
   X(REG_Bat_MinCell_Voltage, 1290, 225, convertDiv10, 2) \
-  X(REG_Battery_Temp, 262, 225, convertDiv10, 2) 
+  X(REG_Bat_MaxCell:Voltage 1292, 225, convertDiv10, 2) 
+  
 
 
 // Timeout in milliseconds for Modbus transactions.
