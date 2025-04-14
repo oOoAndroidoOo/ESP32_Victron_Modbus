@@ -9,12 +9,14 @@
 // Macro to define the register list using the X-Macro pattern.
 // Each entry consists of:
 
-      // Name(freely selectable),
-            // Modbus register address,
-                  // device ID,
-                            // conversion function(Scale Factor),
-                                    // number of decimals.
-
+     // Name(freely selectable),
+                     // Modbus register address,
+                                  // device ID,
+                                               // conversion function(Scale Factor),
+                                                              // number of decimals.
+ //  X(REG_PV1,      811,        100,       convertNone,      0)   
+ 
+ 
 #define REGISTER_LIST                                    \
   X(REG_PV1, 811, 100, convertNone, 0)                   \
   X(REG_PV2, 808, 100, convertNone, 0)                   \
@@ -76,9 +78,6 @@ public:
   
   // Get the last read value of a given register by its enum index.
   float getValue(RegisterIndex index) const;
-  
-  // Read a register's value by its name.
-  float readRegisterByName(const char *name);
   
   // Read a register's value by its enum index.
   float readRegister(RegisterIndex index);
