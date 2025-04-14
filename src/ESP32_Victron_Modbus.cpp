@@ -4,6 +4,7 @@
 
 // Instantiate the static array of RegisterEntry elements using the REGISTER_LIST macro.
 // The macro converts each entry into a RegisterEntry struct with the corresponding fields.
+
 #define X(name, addr, id, conv, decimals) { #name, addr, id, conv, decimals },
 const RegisterEntry ModbusManager::registers[] = {
     REGISTER_LIST
