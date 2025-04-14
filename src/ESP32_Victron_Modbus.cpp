@@ -64,8 +64,8 @@ void ModbusManager::readAllRegisters() {
     // Convert the raw value using the associated conversion function.
     regValuesInternal[i] = reg.converter(rawValue);
     
-    // Debug output: print the register name, address, device ID, and formatted value.
-    Serial.printf("📟 %s [%d] (ID %d) = %.*f\n", reg.name, reg.address, reg.deviceID, reg.decimals, regValuesInternal[i]);
+    // Debug output: print all register name, address, device ID, and formatted value.
+    //Serial.printf("📟 %s [%d] (ID %d) = %.*f\n", reg.name, reg.address, reg.deviceID, reg.decimals, regValuesInternal[i]);
   }
 }
 
