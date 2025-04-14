@@ -1,9 +1,7 @@
- 
 
+#include "ModbusConfig.h"
 #include <ESP32_Victron_Modbus.h>
-#include "RegList.h"
-//#include "wpsManager.h" wifi s
-
+#include "wpsManager.h"
 
 
 //-------------------------------------------------------------------------------//
@@ -17,10 +15,10 @@ ModbusManager modbus(modbusIP);
 void setup()
 {
   Serial.begin(115200);
-  //start_Wifi();
+  start_Wifi();
   modbus.begin();
-
-
+  //modbus.writeRegister(REG_ESS_MaxPower, 30); // Setze den Wert auf 300
+  
 }
 
 void loop()
@@ -29,7 +27,7 @@ void loop()
   {
 
     modbus.readAllRegisters(); 
-    float minCell = modbus.getValue(REG_Bat_MinCell_Voltage);
+    float minCell = modbus.getValue(REG_Bat_MaxCell_Voltage);
     Serial.printf("🔋 CellMin Voltage: %.2f V\n", minCell,2);
 
    
