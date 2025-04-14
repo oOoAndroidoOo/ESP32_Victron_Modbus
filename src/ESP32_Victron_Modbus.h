@@ -7,7 +7,13 @@
 // https://www.victronenergy.de/upload/documents/CCGX-Modbus-TCP-register-list-3.50.xlsx
 
 // Macro to define the register list using the X-Macro pattern.
-// Each entry consists of: Name, Modbus register address, device ID, conversion function, number of decimals.
+// Each entry consists of:
+
+      // Name(freely selectable),
+            // Modbus register address,
+                  // device ID,
+                            // conversion function(Scale Factor),
+                                    // number of decimals.
 
 #define REGISTER_LIST                                    \
   X(REG_PV1, 811, 100, convertNone, 0)                   \
