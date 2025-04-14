@@ -113,47 +113,7 @@ float ModbusManager::readRegister(RegisterIndex index) {
   return regValuesInternal[index];
 }
 
-// Read a register by its name using string comparison.
-float ModbusManager::readRegisterByName(const char *name) {
-  const RegisterEntry *found = nullptr;
-  
-  // Loop to find the register whose name matches.
-  for (int i = 0; i < REG_COUNT; i++) {
-    if (strcmp(registers[i].name, name) == 0) {
-      found = &registers[i];
-      break;
-    }
-  }
-  
-  // If not found, output a warning and return error.
-  if (!found) {
-    Serial.printf("⚠️ Register nicht gefunden: %s\n", name);
-    return -1;
-  }
-  
-  if (!ensureConnected()) {
-    return -1;
-  }
 
-  uint16_t rawValue = 0;
-  // Issue a read command for the identified register.
-  uint16_t trans = mb.readHreg(remoteIP, found->address, &rawValue, 1, NULL, found->deviceID);
-  unsigned long start = millis();
-  
-  // Wait until the transaction finishes or until a timeout.
-  while (mb.isTransaction(trans)) {
-    mb.task();
-    if (millis() - start > ModbusTimeout) {
-      Serial.printf("⏱️ Timeout beim Lesen von %s (Adresse %d)\n", found->name, found->address);
-      isConnected = false;
-      return -1;
-    }
-    delay(20);
-  }
-  
-  // Return the converted register value.
-  return found->converter(rawValue);
-}
 
 // Write a value to a specific register identified by its index.
 bool ModbusManager::writeRegister(RegisterIndex index, uint16_t value) {
