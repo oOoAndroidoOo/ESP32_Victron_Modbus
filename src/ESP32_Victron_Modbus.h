@@ -21,6 +21,9 @@
 
   const int ModbusTimeout = 1000; //  Timeout in Millisekunden
 
+
+  typedef float (*ConversionFunc)(uint16_t);
+
 // Enum mit allen Registernamen
 enum RegisterIndex
 {
