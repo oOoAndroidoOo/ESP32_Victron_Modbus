@@ -1,38 +1,41 @@
-#include "ESP32_Victron_Modbus.h"
+ 
 
-// #include "wpsManager.h"  anything to Connect to WiFi
+#include <ESP32_Victron_Modbus.h>
+#include "RegList.h"
+//#include "wpsManager.h" wifi s
 
 
+
+//-------------------------------------------------------------------------------//
 
 
 IPAddress modbusIP(0, 0, 0, 0);
-
 ModbusManager modbus(modbusIP);
 
 
 
-void setup() {
+void setup()
+{
   Serial.begin(115200);
   //start_Wifi();
-
   modbus.begin();
 
 
 }
 
-void loop() {
-  if (WiFi.status() == WL_CONNECTED) {
-  
-   modbus.readAllRegisters();
+void loop()
+{
+  if (WiFi.status() == WL_CONNECTED)
+  {
+
+    modbus.readAllRegisters(); 
+    float minCell = modbus.getValue(REG_Bat_MinCell_Voltage);
+    Serial.printf("🔋 CellMin Voltage: %.2f V\n", minCell,2);
+
    
-  Serial.println(modbus.getValue(REG_BAT_PWR));
 
-  Serial.printf("🔋 BatterieLeistung      : %.2f W\n", modbus.readRegister(REG_BAT_PWR));
-  Serial.printf("🔋 Batteriespannung      : %.2f V\n", modbus.readRegister(REG_Battery_Voltage));
-  Serial.printf("🔋 Batteriestrom         : %.2f A\n", modbus.readRegister(REG_Battery_Current));
-  Serial.printf("🔋 BatterieTemperatur    : %.2f C\n", modbus.readRegister(REG_Battery_Temp));
+    
 
-  
-    delay(10000);
+    delay(1000);
   }
 }
