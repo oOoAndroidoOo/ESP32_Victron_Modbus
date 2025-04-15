@@ -25,6 +25,10 @@ static inline float convertMul10(uint16_t raw) {
   return raw * 10.0f;
 }
 
+static inline float convertSub10(uint16_t raw) {
+  return raw - 10.0f;
+}
+
 static inline float convertInt16(uint16_t raw) {
   return static_cast<float>(static_cast<int16_t>(raw));
 }
