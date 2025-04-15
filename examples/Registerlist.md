@@ -1,3 +1,24 @@
+
+# Here is a list of some registers (mainly registers for a Victron Multiplus GX).
+  This list is incomplete.
+
+A complete list of all registers can be found here:
+https://www.victronenergy.de/support-and-downloads/technical-information
+
+# Caution! Many of the registers also have write permissions.
+# Only write to registers if you know exactly what you are doing.
+# I assume no responsibility for any resulting damage.
+
+
+The register names used here are freely selectable and are only used for comparison with the Victron register list.
+
+# For example, you can also assign your own name for:
+X(System_PV_AC_coupled_on_output_L1, 808, 100, convertNone, 0)
+
+# You can also assign a custom name. e.g.
+X(PV__L1_Out, 808, 100, convertNone, 0)
+
+
 #define REGISTER_LIST                                             \
   X(System_PV_AC_coupled_on_output_L1, 808, 100, convertNone, 0)         \
   X(System_PV_AC_coupled_on_output_L2, 809, 100, convertNone, 0)         \
@@ -134,7 +155,59 @@
   X(Battery_Time_since_last_full_charge, 289, 225, convertNone, 0)       \
   X(Battery_Automatic_syncs, 290, 225, convertNone, 0)                   \
   X(Battery_Low_voltage_alarms, 291, 225, convertNone, 0)                \
-  X(Battery_High_voltage_alarms, 292, 225, convertNone, 0)
+  X(Battery_High_voltage_alarms, 292, 225, convertNone, 0)               \
+  X(Battery_State_of_Health, 304, 225, convertDiv10, 1)                  \
+  X(Batter_Max_charge_voltage, 305, 225, convertDiv10, 1)                \
+  X(Batter_Min_discharge_voltage, 306, 225, convertDiv10, 1)             \
+  X(Batter_Max_charge_current, 307, 225, convertDiv10, 1)                \
+  X(Batter_Max_discharge_current, 308, 225, convertDiv10, 1)             \
+  X(Battery_Capacity, 309, 225, convertDiv10, 1)                         \
+  X(Battery_Minimum_cell_temperature, 318, 225, convertInt16Div10, 1)    \
+  X(Battery_Maximum_cell_temperature, 319, 225, convertInt16Div10, 1)    \
+  X(Battery_High_charge_current_alarm, 320, 225, convertNone, 0)         \
+  X(Battery_High_discharge_current_alarm, 321, 225, convertNone, 0)      \
+  X(Battery_Cell_imbalance_alarm, 322, 225, convertNone, 0)              \
+  X(Battery_Internal_failure_alarm, 323, 225, convertNone, 0)            \
+  X(Battery_High_charge_temperature_alarm, 324, 225, convertNone, 0)     \
+  X(Battery_Low_charge_temperature_alarm, 325, 225, convertNone, 0)      \
+  X(Battery_Low_cell_voltage_alarm, 326, 225, convertNone, 0)            \
+  X(Battery_Mode, 327, 225, convertNone, 0)                              \
+  X(Battery_State, 1282, 225, convertNone, 0)                            \
+  X(Battery_Error, 1283, 225, convertNone, 0)                             \
+  X(Battery_System_switch, 1284, 225, convertNone, 0)                     \
+  X(Battery_Balancing, 1285, 225, convertNone, 0)                         \
+  X(Battery_number_of_batteries, 1286, 225, convertNone, 0)               \
+  X(Battery_batteries_parallel, 1287, 225, convertNone, 0)                \
+  X(Battery_batteries_series, 1288, 225, convertNone, 0)                  \
+  X(Battery_number_of_cells_per_battery, 1289, 225, convertNone, 0)       \
+  X(Battery_Min_cell_voltage, 1290, 225, convertDiv100, 2)                \
+  X(Battery_Max_cell_voltage, 1291, 225, convertDiv100, 2)                \
+  X(Battery_number_of_modules_offline, 1302, 225, convertNone, 0)         \
+  X(Battery_number_of_modules_online, 1303, 225, convertNone, 0)          \
+  X(Battery_number_of_modules_blocking_charge, 1304, 225, convertNone, 0) \
+  X(Battery_number_of_modules_blocking_discharge, 1305,225,convertNone,0) \
+  X(Battery_mode, 1319, 225, convertNone, 0)                              \
+  X(Battery_Balancer_status, 1320, 225, convertNone, 0)                   \
+  X(Grid_L1_Power, 2600, 40, convertInt16, 0)                             \
+  X(Grid_L2_Power, 2601, 40, convertInt16, 0)                             \
+  X(Grid_L3_Power, 2602, 40, convertInt16, 0)                             \
+  X(Grid_L1_Energy_from_net, 2603, 40, convertInt16Div100, 2)             \
+  X(Grid_L2_Energy_from_net, 2604, 40, convertInt16Div100, 2)             \
+  X(Grid_L3_Energy_from_net, 2605, 40, convertInt16Div100, 2)             \
+  X(Grid_L1_Energy_to_net, 2606, 40, convertInt16Div100, 2)               \
+  X(Grid_L2_Energy_to_net, 2607, 40, convertInt16Div100, 2)               \
+  X(Grid_L3_Energy_to_net, 2608, 40, convertInt16Div100, 2)               \
+  X(Grid_L1_Voltage, 2616, 40, convertDiv10, 1)                           \
+  X(Grid_L1_Current, 2617, 40, convertInt16Div10, 1)                      \
+  X(Grid_L2_Voltage, 2618, 40, convertDiv10, 1)                           \
+  X(Grid_L2_Current, 2619, 40, convertInt16Div10, 1)                      \
+  X(Grid_L3_Voltage, 2620, 40, convertDiv10, 1)                           \
+  X(Grid_L3_Current, 2621, 40, convertInt16Div10, 1)                      \
+  X(Grid_AC_Frequency, 2644, 40, convertDiv100, 1)
+
+ 
+
+
 
 
 
