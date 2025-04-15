@@ -10,7 +10,7 @@
 //-------------------------------------------------------------------------------//
 
 
-IPAddress modbusIP(192, 168, 177, 240); //Your Modbus device IP address
+IPAddress modbusIP(192, 168, 1, 1); //Your Modbus device IP address
 ModbusManager modbus(modbusIP); // ModbusManager instance with the IP address of the Modbus device
 
 
