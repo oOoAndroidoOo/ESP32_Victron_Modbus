@@ -7,7 +7,6 @@
   X(AC_Consumption_L1, 817, 100, convertNone, 0)                  \
   X(AC_Consumption_L2, 818, 100, convertNone, 0)                  \
   X(AC_Consumption_L3, 819, 100, convertNone, 0)                  \
-  X(Active_input_source, 826, 100, convertInt16, 0)               \
   X(Battery_Voltage_System, 840, 100, convertDiv10, 2)            \
   X(Battery_Current_System, 841, 100, convertInt16Div10, 2)       \
   X(Battery_Power_System, 842, 100, convertInt16, 2)              \
@@ -24,21 +23,8 @@
   X(Output_voltage_phase_1, 15, 228, convertDiv10, 2)             \
   X(Output_current_phase_1, 18, 228, convertInt16Div10, 2)        \
   X(Output_frequency_phase_1, 21, 228, convertInt16Div100, 2)     \
-  X(Active_input_current_limit, 22, 228, convertInt16Div10, 0)    \
   X(Output_power_1, 23, 228, convertInt16Mul10, 2)                \
   X(Battery_voltage, 26, 228, convertDiv100, 2)                   \
   X(Battery_current, 27, 228, convertInt16Div10, 2)               \
-  X(Phase_count, 28, 228, convertNone, 0)                         \
-  X(Active_input, 29, 228, convertNone, 0)                        \
-  X(VE_Bus_StateOfCharge, 30, 228, convertDiv10, 0)               \
-  X(VE_Bus_State, 31, 228, convertNone, 0)                        \
-  X(VE_Bus_Error, 32, 228, convertNone, 0)                        \
-  X(Switch_position, 33, 228, convertNone, 0)                     \
-  X(Temperature_alarm, 34, 228, convertNone, 0)                   \
-  X(Low_Battery_alarm, 35, 228, convertNone, 0)                   \
-  X(Overload_alarm, 36, 228, convertNone, 0)                      \
-  X(ESS_power_setpoint_phase1, 37, 228, convertInt16, 0)          \
-  X(ESS_disable_charge_flag_phase, 38, 228, convertNone, 0)       \
-  X(ESS_disable_feedback_flag_phase, 39, 228, convertNone, 0)     \
-  X(ESS_power_setpoint_phase2, 40, 228, convertInt16, 0)          \
-  X(ESS_power_setpoint_phase3, 41, 228, convertInt16, 0)
+  X(VE_Bus_StateOfCharge, 30, 228, convertDiv10, 0)               
+ 
