@@ -8,7 +8,7 @@
 #include <string.h>
 
 // --- Conversion-Funktionen ---
-// (alle Funktionen als inline definiert, damit sie in jedem Übersetzungseinheit verfügbar sind)
+// (alle Funktionen als inline definiert, damit sie in jeder Übersetzungseinheit verfügbar sind)
 static inline float convertNone(uint16_t raw) {
   return static_cast<float>(raw);
 }
@@ -31,6 +31,18 @@ static inline float convertInt16(uint16_t raw) {
 
 static inline float convertInt16Div10(uint16_t raw) {
   return static_cast<float>(static_cast<int16_t>(raw)) / 10.0f;
+}
+
+static inline float convertInt16Div100(uint16_t raw) {
+  return static_cast<float>(static_cast<int16_t>(raw)) / 100.0f;
+}
+
+static inline float convertInt16Mul10(uint16_t raw) {
+  return static_cast<float>(static_cast<int16_t>(raw)) * 10.0f;
+}
+
+static inline float convertInt32(uint16_t raw) {
+  return static_cast<float>(static_cast<int16_t>(raw));
 }
 
 // --- Fallback-Definition der REGISTER_LIST, falls sie nicht via ModbusConfig.h definiert wurde ---
