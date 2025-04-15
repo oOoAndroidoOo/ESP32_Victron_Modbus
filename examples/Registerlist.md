@@ -12,12 +12,14 @@ https://www.victronenergy.de/support-and-downloads/technical-information
 
 The register names used here are freely selectable and are only used for comparison with the Victron register list.
 
-# For example, you can also assign your own name for:
+# For example, you can also assign your own Registername for:
 X(System_PV_AC_coupled_on_output_L1, 808, 100, convertNone, 0)
 
-# You can also assign a custom name. e.g.
+# You can also assign a custom Registername. e.g.
 X(PV__L1_Out, 808, 100, convertNone, 0)
 
+
+# Please note that depending on the configuration of the Victron devices, not all registers contain data
 
 #define REGISTER_LIST                                             \
   X(System_PV_AC_coupled_on_output_L1, 808, 100, convertNone, 0)         \
