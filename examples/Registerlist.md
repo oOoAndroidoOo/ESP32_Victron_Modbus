@@ -207,7 +207,9 @@ X(MyRegiser, 808, 100, convertNone, 0, 1, ,"Mymeasurement")
   X(Grid_L3_Current, 2621, 40, convertInt16Div10, 1, 1, "A")                     \
   X(Grid_AC_Frequency, 2644, 40, convertDiv100, 1, 1, "Hz")                      \
   X(Grid_Total_Energy_from_net, 2634, 40, convertInt32Div100, 2, 2, "kWh")       \
-  X(Grid_Total_Energy_to_net, 2636, 40, convertInt32Div100, 2, 2, "kWh")
+  X(Grid_Total_Energy_to_net, 2636, 40, convertInt32Div100, 2, 2, "kWh")         \
+  X(Settings_ESS_Minimum_SoC, 2901, 100, convertDiv10,0 , 1, "%")                \
+  X(Settings_ESS_max_discharge_current, 2704, 100, convertMul10, 0, 1, "W")
 
 
 
