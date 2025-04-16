@@ -287,6 +287,7 @@ public:
       }
       delay(20);
     }
+    if (debugMode)
     Serial.printf("Schreiben erfolgreich: %s (Adresse %d)\n", reg.name, reg.address);
     return true;
   }
